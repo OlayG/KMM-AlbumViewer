@@ -1,8 +1,12 @@
-import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
+import di.initializeKoin
+import moe.tlaster.precompose.PreComposeWindow
 
-fun main() = application {
-    Window(onCloseRequest = ::exitApplication) {
-        MainView()
+fun main() {
+    initializeKoin { }
+    application {
+        PreComposeWindow(onCloseRequest = ::exitApplication) {
+            MainView()
+        }
     }
 }

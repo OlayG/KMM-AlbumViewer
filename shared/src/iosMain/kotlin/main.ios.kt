@@ -1,5 +1,8 @@
-import androidx.compose.ui.window.ComposeUIViewController
+import di.initializeKoin
+import moe.tlaster.precompose.PreComposeApplication
 
 actual fun getPlatformName(): String = "iOS"
+fun MainViewController() = PreComposeApplication(title = "IOS TITLE") { App() }
 
-fun MainViewController() = ComposeUIViewController { App() }
+
+fun InitializeKoin() = initializeKoin {  }
